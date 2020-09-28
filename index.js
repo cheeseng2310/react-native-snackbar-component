@@ -93,6 +93,7 @@ class SnackbarComponent extends Component {
           {this.props.actionHandler !== null && !!this.props.actionText ? (
             <Touchable
               onPress={this.props.actionHandler}
+              disable={this.props.disableActionButton}
               style={{
                 paddingHorizontal: 15,
                 paddingVertical: 7,
