@@ -70,9 +70,7 @@ class SnackbarComponent extends Component {
           {this.props.dismissButton && (
             <TouchableOpacity
               style={{ paddingLeft: 10 }}
-              onPress={() => {
-                console.log("dismiss Button");
-              }}
+              onPress={this.props.dismissButtonPress}
             >
               <Icon name="close" color={"white"} />
             </TouchableOpacity>
@@ -91,7 +89,7 @@ class SnackbarComponent extends Component {
             </Text>
           )}
           {this.props.actionHandler !== null && !!this.props.actionText ? (
-            <Touchable
+            <TouchableOpacity
               onPress={this.props.actionHandler}
               disabled={this.props.disableActionButton}
               style={{
@@ -111,7 +109,7 @@ class SnackbarComponent extends Component {
               >
                 {this.props.actionText.toUpperCase()}
               </Text>
-            </Touchable>
+            </TouchableOpacity>
           ) : null}
         </Animated.View>
       </Animated.View>
